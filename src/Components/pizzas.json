@@ -1,0 +1,19 @@
+{
+	"pizzas": [
+		{ "name": "Mussarela", "ingredients": "Molho, Mussarela, Azeitona e Orégano", "isPopular": true },
+		{ "name": "Marguerita", "ingredients": "Molho, Mussarela, Tomate, Manjericão e Orégano", "isPopular": false },
+		{ "name": "Alho Frito", "ingredients": "Molho, Mussarela e Alho Frito na Manteiga", "isPopular": false },
+		{ "name": "Alho Poró", "ingredients": "Molho, Mussarela e Alho Poró", "isPopular": false },
+		{ "name": "Calabresa", "ingredients": "Molho, Mussarela, Calabresa e Orégano", "isPopular": true },
+		{ "name": "Presunto", "ingredients": "Molho, Mussarela, Presunto e Azeitona", "isPopular": true },
+		{ "name": "Toscana", "ingredients": "Molho, Mussarela, Calabresa Moída, Cebola e Tomate", "isPopular": false },
+		{ "name": "Bacon Crocante", "ingredients": "Molho, Mussarela e Bacon", "isPopular": false },
+		{ "name": "Bacon e Milho", "ingredients": "Molho, Mussarela, Bacon e Milho", "isPopular": false },
+		{ "name": "Palmito", "ingredients": "Molho, Mussarela e Palmito", "isPopular": false },
+		{ "name": "Quatro Queijos", "ingredients": "Molho, Mussarela, Provolone, Catupiry e Parmesão", "isPopular": false },
+		{ "name": "Á Moda", "ingredients": "Molho, Mussarela, Calabresa, Tomate, Catupiry e Milho", "isPopular": true },
+		{ "name": "Frago com Catupiry", "ingredients": "Molho, Mussarela, Frango e Catipiry", "isPopular": true },
+		{ "name": "Atum", "ingredients": "Molho, Mussarela, Atum e Cebola", "isPopular": false },
+		{ "name": "Portuguesa", "ingredients": "Molho, Mussarela, Presunto, Calabresa, Pimentão, Cebola e Azeitona", "isPopular": true }
+	]
+}
