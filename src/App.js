@@ -1,14 +1,16 @@
-import logo from './logo.svg';
+import { RecoilRoot } from 'recoil';
 import './App.css';
 import MainHeader from './Components/MainHeader';
-import PizzaList from './Components/PizzaList';
+import Home from './Pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <MainHeader />
-      <PizzaList />
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        <MainHeader />
+        <Home />
+      </div>
+    </RecoilRoot>
   );
 }
 
