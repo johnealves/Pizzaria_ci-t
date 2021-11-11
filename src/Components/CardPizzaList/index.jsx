@@ -1,20 +1,53 @@
 import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import orderList from "../../Recoil/OrderAtom";
 import "./cardPizzaList.css";
 
-const CradPizzaList = ({ pizza }) => {
-  const [popularMarking, setPolularMarking] = useState("")
+const CradPizzaList = ({ pizza: { name, ingredients, isPopular } }) => {
+  const [popularClass, setPolularClass] = useState("popular")
+  const [order, setOrder] = useRecoilState(orderList)
 
-  useEffect(() => {
-    (pizza.isPopular) && setPolularMarking("popular")
-  })
+  const verifyOrders = () => {
+    return order.find((elem) => elem.name === name);
+  }
+
+  const increaseQuantity = () => {
+    const newOrder = [...order]
+    const result = newOrder.map((value) => {
+      if (value.name === name) {
+        const newObject = { 
+          name: value.name,
+          ingredients: value.ingredients,
+          quantity: value.quantity + 1
+        }
+        return newObject;
+      }
+      return value;
+    })
+    console.log(result)
+    setOrder(result);
+  }
+
+  const addOrder = () => {
+    const verify = verifyOrders()
+    if (!verify) {
+      const newOrder = [...order]
+      newOrder.push({ name, ingredients, quantity: 1})
+      setOrder(newOrder)
+    } else {
+      increaseQuantity()
+    }
+  }
 
   return(
-    <div className={ `card-pizza-container ${popularMarking}`}>
+    <div className={ `card-pizza-container ${(isPopular) && popularClass}`}>
       <section>
-        <p>{ pizza.name } { (pizza.isPopular) && <span>Popular</span> }</p>
-        <p>{ pizza.ingredients }</p>
+        <p>{ name } { (isPopular) && <span>Popular</span> }</p>
+        <p>{ ingredients }</p>
       </section>
-      <button>+</button>
+      <button onClick={ addOrder }>
+        +
+      </button>
     </div>
   )
 }
