@@ -11,8 +11,10 @@ const OrderList = () => {
     <div className="order-container">
       <h2>Pedidos</h2>
       { (order.length) 
-        ? order.map((pizza, i) => <CardOrder pizza={ pizza } key={ i }/>)
-        : <p>Escolha sua pizza favorita</p> }
+        ? <ul aria-label="order-flavors">
+            {  order.map((pizza, i) => <CardOrder pizza={ pizza } key={ i }/>) }
+          </ul>
+        : <p>Escolha suas pizzas favoritas</p> }
     </div>
   )
 }

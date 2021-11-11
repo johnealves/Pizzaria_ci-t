@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { TextField } from "@material-ui/core";
-import CradPizzaList from "../CardPizzaList"
-import { pizzas as data } from "../pizzas.json"
+import CardPizzaList from "../CardPizzaList"
+import { pizzas as data } from "../../pizzas.json"
+import { InputAdornment, OutlinedInput } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 import "./pizzaList.css";
 
 const PizzaList = () => {
@@ -20,12 +21,16 @@ const PizzaList = () => {
   return(
     <div className="pizza-list-container">
       <h2>Menu</h2>
-      <TextField
-        placeholder="Produrar por nome da pizza"
+      <OutlinedInput
+        data-testid="input-search"
+        placeholder="Procurar por nome da pizza"
         sx={{ m: 2, width: "95%" }}
         onInput={ handleFilter }
+        startAdornment={<InputAdornment position="start"><SearchIcon /></InputAdornment>}
       />
-      { (pizzas) && pizzas.map((pizza) => <CradPizzaList pizza={ pizza } />) }
+      <ul aria-label="pizzas-flavors">
+        { (pizzas) && pizzas.map((pizza, i) => <CardPizzaList pizza={ pizza } key={ i }/>) }
+      </ul>
     </div>
   )
 }

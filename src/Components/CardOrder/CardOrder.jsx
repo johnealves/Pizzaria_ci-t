@@ -1,6 +1,4 @@
-import { TextField } from "@material-ui/core";
-import { Button } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useRecoilState } from "recoil";
 import orderList from "../../Recoil/OrderAtom";
 import "./cardOrder.css";
@@ -45,24 +43,22 @@ const CardOrder = ({ pizza: { name, ingredients, quantity } }) => {
   }
 
   return(
-    <div className={ `card-order-container`}>
+    <li className={ `card-order-container`}>
       <section>
         <p>{ name }</p>
         <p>{ ingredients }</p>
       </section>
       <section>
         <input
-          // type="number"
+          data-testid="input-quantity"
           value={ quantity }
           disabled
         />
-        <button 
-          onClick={ removeUnitFlavors }
-        >
+        <button onClick={ removeUnitFlavors }>
           -
         </button>
       </section>
-    </div>
+    </li>
   )
 }
 

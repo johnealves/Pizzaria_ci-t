@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useRecoilState } from "recoil";
 import orderList from "../../Recoil/OrderAtom";
 import "./cardPizzaList.css";
 
-const CradPizzaList = ({ pizza: { name, ingredients, isPopular } }) => {
-  const [popularClass, setPolularClass] = useState("popular")
-  const [order, setOrder] = useRecoilState(orderList)
+const CardPizzaList = ({ pizza: { name, ingredients, isPopular } }) => {
+  const [order, setOrder] = useRecoilState(orderList);
+  const  popularClass = "popular";
 
   const verifyFlavorsInOrder = () => {
     return order.find((value) => value.name === name);
@@ -39,7 +39,7 @@ const CradPizzaList = ({ pizza: { name, ingredients, isPopular } }) => {
   }
 
   return(
-    <div className={ `card-pizza-container ${(isPopular) && popularClass}`}>
+    <li className={ `card-pizza-container ${(isPopular) && popularClass}`}>
       <section>
         <p>{ name } { (isPopular) && <span>Popular</span> }</p>
         <p>{ ingredients }</p>
@@ -47,8 +47,8 @@ const CradPizzaList = ({ pizza: { name, ingredients, isPopular } }) => {
       <button onClick={ addOrder }>
         +
       </button>
-    </div>
+    </li>
   )
 }
 
-export default CradPizzaList;
+export default CardPizzaList;
