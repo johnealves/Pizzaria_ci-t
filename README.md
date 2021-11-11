@@ -1,4 +1,4 @@
-#Pizzaria CI&T
+# Pizzaria CI&T
 
 Esta applicação abstrai a interface basica de um menu digital de uma pizzaria, sendo possivel:
  - visualizar os sabores filtrar o sabos desejado.
