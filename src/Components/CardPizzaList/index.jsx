@@ -7,8 +7,8 @@ const CradPizzaList = ({ pizza: { name, ingredients, isPopular } }) => {
   const [popularClass, setPolularClass] = useState("popular")
   const [order, setOrder] = useRecoilState(orderList)
 
-  const verifyOrders = () => {
-    return order.find((elem) => elem.name === name);
+  const verifyFlavorsInOrder = () => {
+    return order.find((value) => value.name === name);
   }
 
   const increaseQuantity = () => {
@@ -24,12 +24,11 @@ const CradPizzaList = ({ pizza: { name, ingredients, isPopular } }) => {
       }
       return value;
     })
-    console.log(result)
     setOrder(result);
   }
 
   const addOrder = () => {
-    const verify = verifyOrders()
+    const verify = verifyFlavorsInOrder()
     if (!verify) {
       const newOrder = [...order]
       newOrder.push({ name, ingredients, quantity: 1})

@@ -15,14 +15,18 @@
 }
 
 .card-order-container section input {
-  background-color: cadetblue;
   text-align: center;
   height: 90%;
-  width: 3rem;
+  width: 2.5rem;
 }
 
 .card-order-container section button {
-  background-color: rgb(236, 165, 162);
+  background-color: rgb(233, 192, 190);
+  border: none;
+  border-radius: 50%;
   color: #ed1941;
   font-size: 1.7rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  width: 2.5rem;
 }
